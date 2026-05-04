@@ -80,54 +80,15 @@ export default function ContactPage() {
         </section>
 
         <section className="cp-info-section">
-          <div className="cp-info-grid">
-
-            <div className="cp-details">
-              <h2 className="cp-details-title">Contact Info</h2>
-
-              <div className="cp-detail-item">
-                <div className="cp-detail-label">Email</div>
-                <a href="mailto:stravarix@gmail.com" className="cp-detail-value">stravarix@gmail.com</a>
-              </div>
-
-              <div className="cp-detail-item">
-                <div className="cp-detail-label">Phone</div>
-                <a href="tel:+18013853246" className="cp-detail-value">+1 (801) 385-3246</a>
-              </div>
-
-<div className="cp-detail-item">
-                <div className="cp-detail-label">Hours</div>
-                <div className="cp-detail-value">Mon – Fri, 9am – 6pm</div>
-              </div>
+          <div className="cp-contact-simple">
+            <div className="cp-detail-item">
+              <div className="cp-detail-label">Email</div>
+              <a href="mailto:stravarix@gmail.com" className="cp-detail-value">stravarix@gmail.com</a>
             </div>
-
-            <form className="cp-form" onSubmit={e => e.preventDefault()}>
-              <h2 className="cp-details-title">Send a Message</h2>
-
-              <div className="cp-field-row">
-                <div className="cp-field">
-                  <label className="cp-label">Name</label>
-                  <input className="cp-input" type="text" placeholder="Your name" />
-                </div>
-                <div className="cp-field">
-                  <label className="cp-label">Email</label>
-                  <input className="cp-input" type="email" placeholder="your@email.com" />
-                </div>
-              </div>
-
-              <div className="cp-field">
-                <label className="cp-label">What do you need?</label>
-                <input className="cp-input" type="text" placeholder="Website, ads, Google profile..." />
-              </div>
-
-              <div className="cp-field">
-                <label className="cp-label">Message</label>
-                <textarea className="cp-input cp-textarea" placeholder="Tell us about your business..." rows={5} />
-              </div>
-
-              <button type="submit" className="cp-submit">Send Message →</button>
-            </form>
-
+            <div className="cp-detail-item">
+              <div className="cp-detail-label">Phone</div>
+              <a href="tel:+18013853246" className="cp-detail-value">+1 (801) 385-3246</a>
+            </div>
           </div>
         </section>
 
