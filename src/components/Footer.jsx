@@ -43,7 +43,7 @@ export default function Footer() {
 
       <div className="footer-bottom">
         <p className="footer-copy">
-          © {year} Stravarix. All rights reserved.
+          © {year} Stravarix. All rights reserved. <a href="/legal" className="footer-legal-link">Privacy Policy & Terms</a>
         </p>
 
         <div className="footer-socials">
