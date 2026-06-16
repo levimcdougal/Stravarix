@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, lazy, Suspense } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Lenis from 'lenis'
 import { gsap } from 'gsap'
@@ -14,9 +14,10 @@ import Stats from './components/Stats'
 import Process from './components/Process'
 import CTA from './components/CTA'
 import Footer from './components/Footer'
-import ServicePage from './pages/ServicePage'
-import ContactPage from './pages/ContactPage'
-import LegalPage from './pages/LegalPage'
+
+const ServicePage = lazy(() => import('./pages/ServicePage'))
+const ContactPage = lazy(() => import('./pages/ContactPage'))
+const LegalPage   = lazy(() => import('./pages/LegalPage'))
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -61,12 +62,14 @@ function HomePage() {
 export default function App() {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/services" element={<><Navbar /><ServicePage /></>} />
-        <Route path="/contact" element={<><Navbar /><ContactPage /></>} />
-        <Route path="/legal" element={<><Navbar /><LegalPage /></>} />
-      </Routes>
+      <Suspense fallback={null}>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/services" element={<><Navbar /><ServicePage /></>} />
+          <Route path="/contact" element={<><Navbar /><ContactPage /></>} />
+          <Route path="/legal" element={<><Navbar /><LegalPage /></>} />
+        </Routes>
+      </Suspense>
     </BrowserRouter>
   )
 }
