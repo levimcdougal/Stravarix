@@ -12,6 +12,13 @@ export default function Stats() {
   const sectionRef = useRef(null)
 
   useEffect(() => {
+    if (window.matchMedia('(max-width: 768px), (prefers-reduced-motion: reduce)').matches) {
+      sectionRef.current?.querySelectorAll('.stat-number').forEach((el, i) => {
+        el.textContent = stats[i].value + stats[i].suffix
+      })
+      return
+    }
+
     const ctx = gsap.context(() => {
       const counters = document.querySelectorAll('.stat-number')
 

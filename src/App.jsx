@@ -22,6 +22,9 @@ gsap.registerPlugin(ScrollTrigger)
 
 function HomePage() {
   useEffect(() => {
+    // Native scrolling is substantially cheaper and more responsive on touch devices.
+    if (window.matchMedia('(max-width: 768px), (pointer: coarse), (prefers-reduced-motion: reduce)').matches) return
+
     const lenis = new Lenis({
       duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),

@@ -32,6 +32,8 @@ export default function Process() {
   const sectionRef = useRef(null)
 
   useEffect(() => {
+    if (window.matchMedia('(max-width: 768px), (prefers-reduced-motion: reduce)').matches) return
+
     const ctx = gsap.context(() => {
       gsap.to('.process-item', {
         scrollTrigger: {

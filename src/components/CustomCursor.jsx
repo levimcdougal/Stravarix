@@ -8,6 +8,8 @@ export default function CustomCursor() {
   const rafRef = useRef(null)
 
   useEffect(() => {
+    if (window.matchMedia('(pointer: coarse), (prefers-reduced-motion: reduce)').matches) return
+
     const dot = dotRef.current
     const ring = ringRef.current
 

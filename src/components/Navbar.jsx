@@ -1,18 +1,15 @@
 import { useEffect, useState } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
-  const location = useLocation()
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40)
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
-
-  useEffect(() => { setMenuOpen(false) }, [location])
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? 'hidden' : ''
@@ -35,7 +32,7 @@ export default function Navbar() {
         <ul className="nav-links">
           {links.map((l) => (
             <li key={l.to}>
-              <Link to={l.to}>{l.label}</Link>
+              <Link to={l.to} onClick={() => setMenuOpen(false)}>{l.label}</Link>
             </li>
           ))}
         </ul>

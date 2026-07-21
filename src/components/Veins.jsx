@@ -37,6 +37,8 @@ export default function Veins() {
   const svgRef = useRef(null)
 
   useEffect(() => {
+    if (window.matchMedia('(max-width: 768px), (pointer: coarse), (prefers-reduced-motion: reduce)').matches) return
+
     const svg = svgRef.current
     if (!svg) return
 
@@ -89,6 +91,7 @@ export default function Veins() {
   return (
     <svg
       ref={svgRef}
+      className="veins"
       aria-hidden="true"
       style={{
         position: 'fixed',

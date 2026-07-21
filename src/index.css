@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700;800&display=swap');
-
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -1169,6 +1167,35 @@ body {
   .process-grid { grid-template-columns: 1fr; }
   .tech-section { padding: 40px 24px; flex-direction: column; align-items: flex-start; gap: 24px; }
   .tech-logos { gap: 24px; }
+
+  /* Mobile performance: retain the design without costly continuous painting. */
+  .veins { display: none; }
+  .hero-orb { filter: blur(55px); animation: none; opacity: 0.24; }
+  .hero-orb-1 { width: 340px; height: 340px; }
+  .hero-orb-2 { width: 280px; height: 280px; }
+  .hero-orb-3 { display: none; }
+  .hero-line-inner { transform: none; }
+  .hero-sub, .hero-actions, .hero-scroll { opacity: 1; transform: none !important; }
+  .hero-scroll-line, .marquee-track { animation-play-state: paused; }
+  .process-item { opacity: 1; transform: none; }
+  .cta-bg-orb { filter: blur(60px); }
+  .navbar.scrolled { backdrop-filter: none; -webkit-backdrop-filter: none; background: rgba(6, 6, 10, 0.96); }
+
+  /* Skip layout and paint work for sections until they approach the viewport. */
+  main > :not(.hero):not(.marquee-section) {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 700px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+  .hero-line-inner, .process-item { transform: none; }
+  .hero-sub, .hero-actions, .hero-scroll, .process-item { opacity: 1; }
 }
 
 /* ─── SERVICE PAGE ─── */

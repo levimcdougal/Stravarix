@@ -212,22 +212,24 @@ function TemplateBold({ p }) {
   )
 }
 
+const CARD_ENTRANCES = [
+  { x: -120, y: 60 },
+  { x: 0, y: 120 },
+  { x: 120, y: 60 },
+]
+
 export default function Works() {
   const sectionRef = useRef(null)
   const cardsRef = useRef([])
 
-  const from = [
-    { x: -120, y: 60 },
-    { x: 0,    y: 120 },
-    { x: 120,  y: 60 },
-  ]
-
   useEffect(() => {
+    if (window.matchMedia('(max-width: 768px), (prefers-reduced-motion: reduce)').matches) return
+
     const ctx = gsap.context(() => {
       cardsRef.current.filter(Boolean).forEach((card, i) => {
         gsap.from(card, {
-          x: from[i].x,
-          y: from[i].y,
+          x: CARD_ENTRANCES[i].x,
+          y: CARD_ENTRANCES[i].y,
           opacity: 0,
           duration: 1.1,
           ease: 'power3.out',
