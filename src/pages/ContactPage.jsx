@@ -47,7 +47,11 @@ export default function ContactPage() {
             </a>
 
             <a className="contact-action-card" href="tel:+18013853246">
-              <span className="contact-action-icon">☎</span>
+              <span className="contact-action-icon" aria-hidden="true">
+                <svg width="21" height="21" viewBox="0 0 24 24" fill="none">
+                  <path d="M7.2 3.5 9.6 8l-2.1 1.7c1.1 2.6 3.2 4.7 5.8 5.8l1.7-2.1 4.5 2.4-.7 3.1c-.2.9-1 1.6-2 1.6C9.5 20.5 3.5 14.5 3.5 7.2c0-1 .7-1.8 1.6-2l2.1-.5Z" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </span>
               <span>
                 <small>Call or text</small>
                 <strong>(801) 385-3246</strong>
