@@ -1,98 +1,80 @@
-import { useEffect, useRef } from 'react'
-import { gsap } from 'gsap'
+import { useEffect } from 'react'
+
+const planItems = [
+  'Professional website',
+  'Domain name included',
+  'Fast, reliable hosting',
+  'Mobile-friendly design',
+  'Google Business Profile help',
+  'Ongoing support',
+]
 
 export default function ContactPage() {
-  const leftRef = useRef(null)
-  const rightRef = useRef(null)
-  const lineRef = useRef(null)
-  const textRef = useRef(null)
-  const contentRef = useRef(null)
-
   useEffect(() => {
     window.scrollTo(0, 0)
-    gsap.set(lineRef.current, { height: 0 })
-    gsap.set(contentRef.current, { opacity: 1 })
-
-    const tl = gsap.timeline()
-
-    // 1. Black line draws down the center
-    tl.to(lineRef.current, {
-      height: '100vh',
-      duration: 1,
-      ease: 'power2.inOut',
-    })
-    // 2. Fade "Ready To Create?" before panels open
-    .to(textRef.current, {
-      opacity: 0,
-      duration: 0.2,
-      ease: 'none',
-    })
-    // 3. Both panels slide away — left goes left, right goes right
-    //    revealing the contact page from the center outward
-    .to(leftRef.current, {
-      xPercent: -100,
-      duration: 0.85,
-      ease: 'power3.inOut',
-    })
-    .to(rightRef.current, {
-      xPercent: 100,
-      duration: 0.85,
-      ease: 'power3.inOut',
-    }, '<')
-    .to(lineRef.current, {
-      opacity: 0,
-      duration: 0.2,
-    }, '<')
-    .call(() => {
-      if (leftRef.current)  leftRef.current.style.display = 'none'
-      if (rightRef.current) rightRef.current.style.display = 'none'
-      if (lineRef.current)  lineRef.current.style.display = 'none'
-    })
   }, [])
 
   return (
-    <>
-      {/* Left curtain panel */}
-      <div ref={leftRef} className="cp-panel cp-panel-left" />
+    <main className="contact-page">
+      <section className="contact-hero">
+        <div className="section-label">Get In Touch</div>
+        <h1>Let’s put your<br /><span>business online.</span></h1>
+        <p>
+          Tell us a little about your business and we’ll help you get started.
+          No confusing process, no pressure, and no hidden fees.
+        </p>
+      </section>
 
-      {/* Right curtain panel */}
-      <div ref={rightRef} className="cp-panel cp-panel-right" />
-
-      {/* Black line down the center */}
-      <div ref={lineRef} className="cp-line" />
-
-      {/* "Ready To Create?" text over both panels */}
-      <div ref={textRef} className="cp-intro-text">Ready To Create?</div>
-
-      {/* Contact content — always underneath */}
-      <div ref={contentRef} className="cp-page">
-
-        <section className="cp-hero">
-          <div className="section-label">Get In Touch</div>
-          <h1 className="cp-title">Let's Build<br />
-            <span style={{ background: 'var(--gradient)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
-              Something Great
-            </span>
-          </h1>
-          <p className="cp-sub">
-            Ready to grow your digital presence? Reach out and we'll get back to you fast.
+      <section className="contact-main">
+        <div className="contact-actions-panel">
+          <p className="contact-eyebrow">Choose what works for you</p>
+          <h2>Talk directly with us.</h2>
+          <p className="contact-intro">
+            You’ll speak with a real person who can answer questions about your website and the $15 monthly plan.
           </p>
-        </section>
 
-        <section className="cp-info-section">
-          <div className="cp-contact-simple">
-            <div className="cp-detail-item">
-              <div className="cp-detail-label">Email</div>
-              <a href="mailto:stravarix@gmail.com" className="cp-detail-value">stravarix@gmail.com</a>
-            </div>
-            <div className="cp-detail-item">
-              <div className="cp-detail-label">Phone</div>
-              <a href="tel:+18013853246" className="cp-detail-value">+1 (801) 385-3246</a>
-            </div>
+          <div className="contact-action-list">
+            <a
+              className="contact-action-card"
+              href="mailto:stravarix@gmail.com?subject=I%27m%20interested%20in%20the%20%2415%2Fmonth%20website%20plan"
+            >
+              <span className="contact-action-icon">@</span>
+              <span>
+                <small>Email us</small>
+                <strong>stravarix@gmail.com</strong>
+              </span>
+              <b aria-hidden="true">→</b>
+            </a>
+
+            <a className="contact-action-card" href="tel:+18013853246">
+              <span className="contact-action-icon">☎</span>
+              <span>
+                <small>Call or text</small>
+                <strong>(801) 385-3246</strong>
+              </span>
+              <b aria-hidden="true">→</b>
+            </a>
           </div>
-        </section>
 
-      </div>
-    </>
+          <p className="contact-response"><span /> We typically respond within 24 hours.</p>
+        </div>
+
+        <aside className="contact-plan-card">
+          <div className="contact-plan-top">
+            <p>The complete website plan</p>
+            <div><strong>$15</strong><span>/month</span></div>
+          </div>
+          <ul>
+            {planItems.map((item) => (
+              <li key={item}><span>✓</span>{item}</li>
+            ))}
+          </ul>
+          <a href="mailto:stravarix@gmail.com?subject=Let%27s%20start%20my%20%2415%2Fmonth%20website" className="contact-plan-cta">
+            Start my website →
+          </a>
+          <small>Simple monthly pricing. Cancel anytime.</small>
+        </aside>
+      </section>
+    </main>
   )
 }

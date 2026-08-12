@@ -39,33 +39,27 @@ export default function CTA() {
         </div>
 
         <h2 className="cta-title">
-          Ready to Build<br />Something Extraordinary?
+          Everything You Need.<br />Just $15 a Month.
         </h2>
 
         <p className="cta-sub">
-          Drop your email and we'll reach out within 24 hours to discuss your project, no pressure, no fluff.
+          Website, domain name, hosting, and Google Business Profile setup and management support—all in one simple plan.
         </p>
 
-        <form
-          className="cta-form"
-          onSubmit={(e) => {
-            e.preventDefault()
-            alert("Thanks! We'll be in touch within 24 hours.")
-          }}
-        >
-          <input
-            type="email"
-            className="cta-input"
-            placeholder="your@email.com"
-            required
-          />
-          <button type="submit" className="cta-submit">
-            Let's Talk →
-          </button>
-        </form>
+        <div className="cta-contact-actions">
+          <a
+            href="mailto:stravarix@gmail.com?subject=I%27m%20interested%20in%20the%20%2415%2Fmonth%20website%20plan"
+            className="cta-submit"
+          >
+            Email Us →
+          </a>
+          <a href="tel:+18013853246" className="cta-call">
+            Call (801) 385-3246
+          </a>
+        </div>
 
-        <p style={{ marginTop: 20, fontSize: 12, color: 'var(--text-subtle)' }}>
-          No spam. No commitment. Just a conversation.
+        <p className="cta-response-note">
+          No forms or waiting—we'll respond personally.
         </p>
       </div>
     </section>

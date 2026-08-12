@@ -68,7 +68,7 @@ export default function LegalPage() {
 
         <h3>Payment</h3>
         <p>
-          Ongoing website hosting and maintenance is $10/month. You may cancel anytime.
+          The website plan is $15/month and includes the website, domain name, hosting, and Google Business Profile setup and management support. You may cancel anytime.
         </p>
 
         <h3>Contact Us</h3>

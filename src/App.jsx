@@ -67,7 +67,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/services" element={<><Navbar /><ServicePage /></>} />
-        <Route path="/contact" element={<><Navbar /><ContactPage /></>} />
+        <Route path="/contact" element={<><Navbar /><ContactPage /><Footer /></>} />
         <Route path="/legal" element={<><Navbar /><LegalPage /></>} />
       </Routes>
     </BrowserRouter>

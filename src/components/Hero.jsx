@@ -50,29 +50,29 @@ export default function Hero() {
       <div className="hero-content">
         <div className="hero-tag">
           <span className="hero-tag-dot" />
-          Premium Website Agency
+          Websites for service businesses
         </div>
 
         <h1 className="hero-headline">
           <span className="hero-line">
-            <span className="hero-line-inner">We Build</span>
+            <span className="hero-line-inner">Your Business</span>
           </span>
           <span className="hero-line gradient">
-            <span className="hero-line-inner">Digital</span>
+            <span className="hero-line-inner">Online.</span>
           </span>
           <span className="hero-line">
-            <span className="hero-line-inner">Experiences.</span>
+            <span className="hero-line-inner">Made Simple.</span>
           </span>
         </h1>
 
         <p className="hero-sub" style={{ transform: 'translateY(20px)' }}>
-          Stravarix crafts premium websites for brands ready to dominate their market.
-          Fast. Beautiful. Built to convert.
+          A professional website, domain name, hosting, and help setting up and managing
+          your Google Business Profile—all for $15/month.
         </p>
 
         <div className="hero-actions" style={{ transform: 'translateY(20px)' }}>
           <a href="#contact" className="btn-primary">
-            Start a Project
+            Get Started for $15/mo
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
               <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
@@ -80,6 +80,16 @@ export default function Hero() {
           <a href="#works" className="btn-secondary">
             View Our Work
           </a>
+        </div>
+
+        <div className="hero-offer" aria-label="$15 monthly website plan includes">
+          <strong><span>$15</span>/month</strong>
+          <div>
+            <span>Website</span>
+            <span>Domain</span>
+            <span>Hosting</span>
+            <span>Google profile help</span>
+          </div>
         </div>
       </div>
 

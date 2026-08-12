@@ -14,7 +14,7 @@ const getDirection = (i) => i % 3 === 1 ? 'sp-right' : 'sp-left'
 function LineContent({ pair }) {
   return Array(12).fill(null).map((_, j) => (
     <span key={j}>
-      <span style={{ color: '#ffffff' }}>{pair[0]}</span>
+      <span style={{ color: 'var(--text)' }}>{pair[0]}</span>
       {' '}
       <span style={{ color: '#3b82f6' }}>{pair[1]}</span>
       {'    '}
@@ -24,9 +24,9 @@ function LineContent({ pair }) {
 
 const services = [
   {
-    title: 'Websites',
-    price: 'Starting at $10/mo',
-    desc: 'Custom-built websites that look premium and perform. Fast, mobile-ready, and designed to convert visitors into customers. No drag-and-drop templates, built for you.',
+    title: '$15/Month Website Plan',
+    price: 'Everything you need · $15/mo',
+    desc: 'A professionally built, mobile-ready website with your domain name and hosting included, plus hands-on help setting up and managing your Google Business Profile.',
     accent: '#3b82f6',
   },
   {
@@ -67,6 +67,14 @@ export default function ServicePage() {
 
   useEffect(() => {
     window.scrollTo(0, 0)
+    const reducedMotion = window.matchMedia('(max-width: 768px), (prefers-reduced-motion: reduce)').matches
+
+    if (reducedMotion) {
+      if (overlayRef.current) overlayRef.current.style.display = 'none'
+      gsap.set(contentRef.current, { opacity: 1, y: 0 })
+      return
+    }
+
     gsap.set(contentRef.current, { opacity: 0, y: 20 })
 
     const tl = gsap.timeline()
@@ -151,7 +159,7 @@ export default function ServicePage() {
         {/* CTA */}
         <section className="sp-cta">
           <h2 className="sp-cta-title">Ready to Grow?</h2>
-          <p className="sp-cta-sub">Websites start at just $10/month. Let's build your digital footprint.</p>
+          <p className="sp-cta-sub">Get your website, domain name, hosting, and Google Business Profile support for just $15/month.</p>
           <a href="/contact" style={{
             display: 'inline-flex', alignItems: 'center', gap: 10,
             background: 'var(--gradient)', color: '#fff',

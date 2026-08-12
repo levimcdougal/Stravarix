@@ -5,7 +5,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 const stats = [
   { value: 3, suffix: ' days', label: 'Get a Website in as Quick as 3 Days' },
   { value: 100, suffix: '%', label: 'Customizable' },
-  { value: 10, suffix: '/mo', label: 'Starting at $10/Month' },
+  { value: 15, suffix: '/mo', label: 'Website Plan — $15/Month' },
 ]
 
 export default function Stats() {
