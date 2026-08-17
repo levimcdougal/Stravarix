@@ -7,7 +7,7 @@ const services = [
     num: '01',
     icon: '✦',
     title: 'Web Design',
-    desc: 'Every website we build is custom-made for your business, not a template, not a drag-and-drop builder. We design around your brand, your customers, and your goals so your site actually works for you.',
+    desc: 'We design every website around your brand, your customers, and your goals so your site looks professional, feels easy to use, and helps your business grow.',
     features: ['Custom Design', 'Mobile-Ready', 'Designed to Last', 'Built to Convert'],
   },
   {

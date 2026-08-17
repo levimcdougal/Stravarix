@@ -45,7 +45,7 @@ export default function LegalPage() {
 
         <h3>Contact Us</h3>
         <p>
-          <a href="mailto:contact@stravarix.com">contact@stravarix.com</a>
+          <a href="mailto:stravarix@gmail.com">stravarix@gmail.com</a>
         </p>
 
         <h2>Terms and Conditions</h2>
@@ -73,7 +73,7 @@ export default function LegalPage() {
 
         <h3>Contact Us</h3>
         <p>
-          <a href="mailto:contact@stravarix.com">contact@stravarix.com</a>
+          <a href="mailto:stravarix@gmail.com">stravarix@gmail.com</a>
         </p>
       </section>
     </div>

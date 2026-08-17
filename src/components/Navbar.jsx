@@ -22,22 +22,27 @@ export default function Navbar() {
     { label: 'Contact',  to: '/contact' },
   ]
 
+  const handleNavClick = () => {
+    setMenuOpen(false)
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
+  }
+
   return (
     <>
       <nav className={`navbar${scrolled ? ' scrolled' : ''}`}>
-        <Link to="/" className="nav-logo">
+        <Link to="/" className="nav-logo" onClick={handleNavClick}>
           STRAVA<span>RIX</span> WEB
         </Link>
 
         <ul className="nav-links">
           {links.map((l) => (
             <li key={l.to}>
-              <Link to={l.to} onClick={() => setMenuOpen(false)}>{l.label}</Link>
+              <Link to={l.to} onClick={handleNavClick}>{l.label}</Link>
             </li>
           ))}
         </ul>
 
-        <Link to="/contact" className="nav-cta nav-cta-desktop">
+        <Link to="/contact" className="nav-cta nav-cta-desktop" onClick={handleNavClick}>
           Start a Project
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
             <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
@@ -59,11 +64,11 @@ export default function Navbar() {
         <ul>
           {links.map((l) => (
             <li key={l.to}>
-              <Link to={l.to} onClick={() => setMenuOpen(false)}>{l.label}</Link>
+              <Link to={l.to} onClick={handleNavClick}>{l.label}</Link>
             </li>
           ))}
         </ul>
-        <Link to="/contact" className="nav-cta" onClick={() => setMenuOpen(false)}>
+        <Link to="/contact" className="nav-cta" onClick={handleNavClick}>
           Start a Project
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
             <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>

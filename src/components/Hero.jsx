@@ -77,8 +77,8 @@ export default function Hero() {
               <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
           </a>
-          <a href="#works" className="btn-secondary">
-            View Our Work
+          <a href="/services" className="btn-secondary">
+            View Our Services
           </a>
         </div>
 
